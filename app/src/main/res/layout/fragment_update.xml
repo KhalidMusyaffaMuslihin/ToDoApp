@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="args"
+            type="com.idn.todoapp.fragments.update.UpdateFragmentArgs" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/dp16"
+        tools:context=".fragments.update.UpdateFragment">
+
+        <EditText
+            android:id="@+id/edt_title_current"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp60"
+            android:background="@android:color/transparent"
+            android:ems="10"
+            android:hint="@string/title"
+            android:inputType="textPersonName"
+            android:paddingStart="@dimen/dp24"
+            android:paddingEnd="@dimen/dp24"
+            android:text="@{args.currentItem.title}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/spinner_priorities_current"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp60"
+            android:layout_marginTop="@dimen/dp8"
+            android:entries="@array/priorities"
+            android:paddingStart="@dimen/dp20"
+            android:paddingEnd="@dimen/dp20"
+            android:parsePriorityToInt="@{args.currentItem.priority}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_title_current" />
+
+        <EditText
+            android:id="@+id/edt_description_current"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/dp8"
+            android:background="@android:color/transparent"
+            android:ems="10"
+            android:text="@{args.currentItem.description}"
+            android:gravity="start|top"
+            android:hint="@string/description"
+            android:inputType="textMultiLine"
+            android:paddingStart="@dimen/dp24"
+            android:paddingTop="@dimen/dp16"
+            android:paddingEnd="@dimen/dp24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_priorities_current" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

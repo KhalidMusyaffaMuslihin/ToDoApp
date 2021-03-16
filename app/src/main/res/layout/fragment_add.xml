@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/dp16"
+    tools:context=".fragments.add.AddFragment">
+
+    <EditText
+        android:id="@+id/edt_title"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp60"
+        android:background="@android:color/transparent"
+        android:ems="10"
+        android:hint="@string/title"
+        android:inputType="textPersonName"
+        android:paddingStart="@dimen/dp24"
+        android:paddingEnd="@dimen/dp24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinner_priorities"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp60"
+        android:layout_marginTop="@dimen/dp8"
+        android:entries="@array/priorities"
+        android:paddingStart="@dimen/dp20"
+        android:paddingEnd="@dimen/dp20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_title" />
+
+    <EditText
+        android:id="@+id/edt_description"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dp8"
+        android:background="@android:color/transparent"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="@string/description"
+        android:inputType="textMultiLine"
+        android:paddingStart="@dimen/dp24"
+        android:paddingTop="@dimen/dp16"
+        android:paddingEnd="@dimen/dp24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_priorities" />
+</androidx.constraintlayout.widget.ConstraintLayout>

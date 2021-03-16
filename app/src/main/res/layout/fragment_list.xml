@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="mSharedViewModel"
+            type="com.idn.todoapp.fragments.SharedViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/list_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.list.ListFragment">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_todo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingTop="@dimen/dp4" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp24"
+            android:layout_marginBottom="@dimen/dp24"
+            android:clickable="true"
+            android:focusable="true"
+            android:navigateToAddFragment="@{true}"
+            android:src="@drawable/ic_add"
+            android:tint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageView
+            android:id="@+id/img_no_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:emptyDatabase="@{mSharedViewModel.emptyDatabase}"
+            android:src="@drawable/ic_no_data"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/rv_todo"
+            app:layout_constraintEnd_toEndOf="@+id/rv_todo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.36" />
+
+        <TextView
+            android:id="@+id/txt_no_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp12"
+            android:alpha="0.5"
+            android:emptyDatabase="@{mSharedViewModel.emptyDatabase}"
+            android:text="@string/no_data"
+            android:textSize="16sp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@+id/rv_todo"
+            app:layout_constraintStart_toStartOf="@+id/rv_todo"
+            app:layout_constraintTop_toBottomOf="@+id/img_no_data" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
